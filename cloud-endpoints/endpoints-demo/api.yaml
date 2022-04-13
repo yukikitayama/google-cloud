@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  title: Demo API
+  description: This API is for demo.
+  version: 0.0.0
+host: CLOUD-ENDPOINTS-SERVICE-NAME
+x-google-endpoints:
+  - name: CLOUD-ENDPOINTS-SERVICE-NAME
+    allowCors: True
+schemes:
+  - https
+produces:
+  - application/json
+security: []
+paths:
+  /data:
+    get:
+      summary: Get data
+      operationId: dataGet
+      x-google-backend:
+        address: CLOUD-FUNCTIONS-TRIGGER-URL
+      responses:
+        '200':
+          description: success
+    post:
+      summary: Post data
+      operationId: dataPost
+      security:
+        - api_key: []
+      x-google-backend:
+        address: CLOUD-FUNCTIONS-TRIGGER-URL
+      responses:
+        '200':
+          description: success
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
