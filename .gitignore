@@ -1,3 +1,5 @@
 env/
 .idea/
 cloud-endpoints/endpoints-demo/api_private.yaml
+yukikitayama-project-owner-service-account.json
+.env

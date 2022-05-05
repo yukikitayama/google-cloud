@@ -25,7 +25,8 @@ def main():
             'cluster_name': CLUSTER_NAME
         },
         'pyspark_job': {
-            'main_python_file_uri': MAIN_PYTHON_FILE_URI
+            'main_python_file_uri': MAIN_PYTHON_FILE_URI,
+            'args': ['test', '1']
         }
     }
     result = client.submit_job(
